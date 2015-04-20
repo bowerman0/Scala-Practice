@@ -15,7 +15,7 @@
             </EntryPoint>
         </Runtime>
         <Endpoints>
-            <InputEndpoint name="HttpIn" protocol="tcp" port="80" />
+            <InputEndpoint name="HttpIn" protocol="tcp" port="80" localport="8080"/>
         </Endpoints>
     </WorkerRole>
 </ServiceDefinition>
