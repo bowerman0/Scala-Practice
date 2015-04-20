@@ -1,6 +1,13 @@
+import com.github.play2war.plugin._
+
 organization  := "com.example"
 
 version       := "0.1"
+
+Play2WarKeys.servletVersion := "3.1"
+Play2WarPlugin.play2WarSettings
+
+Revolver.settings
 
 scalaVersion  := "2.11.6"
 
@@ -21,8 +28,6 @@ libraryDependencies ++= {
 }
 
 enablePlugins(JavaAppPackaging)
-
-Revolver.settings
 
 
 fork in run := true
