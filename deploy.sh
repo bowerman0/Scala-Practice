@@ -73,8 +73,10 @@ fi
 echo Creating WAR file
 
 # 1. create war
+pushd $DEPLOYMENT_SOURCE
 "$ACTIVATOR_CMD" -d war
 "$KUDU_SYNC_CMD" -f $DEPLOYMENT_SOURCE/target/*.war -t $DEPLOYMENT_SOURCE
+popd
 
 echo Handling Basic Web Site deployment.
 
