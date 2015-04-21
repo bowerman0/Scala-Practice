@@ -35,11 +35,17 @@ if [[ ! -n "$DEPLOYMENT_SOURCE" ]]; then
   DEPLOYMENT_SOURCE=$SCRIPT_DIR
 fi
 
+# Added
+
+JAVA_OPTS=$JAVA_OPTS:"-Dsbt.ivy.home=$DEPLOYMENT_SOURCE/.ivy2/ -Divy.home=$DEPLOYMENT_SOURCE/.ivy2/ -jar `dirname $0`/sbt-launch.jar \"$@\""
+
 if [[ ! -n "$HOME" ]]; then
   HOME=$DEPLOYMENT_SOURCE
 fi
 
 ACTIVATOR_CMD="$DEPLOYMENT_SOURCE/activator"
+
+# end added
 
 if [[ ! -n "$NEXT_MANIFEST_PATH" ]]; then
   NEXT_MANIFEST_PATH=$ARTIFACTS/manifest
