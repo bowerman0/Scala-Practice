@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServiceDefinition name="PackAndDeploy" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
     <WorkerRole name="WorkerRole" vmsize="ExtraSmall">
+        <Startup>
+            <Task commandLine="activator war" executionContext="limited" taskType="simple"/>
+        </Startup>
         <Runtime>
             <EntryPoint>
                 <ProgramEntryPoint commandLine="run.cmd" setReadyOnProcessStart="true" />
             </EntryPoint>
         </Runtime>
         <Endpoints>
-            <InputEndpoint name="HttpIn" protocol="tcp" port="80" localport="8080"/>
+            <InputEndpoint name="HttpIn" protocol="tcp" port="80"/>
         </Endpoints>
     </WorkerRole>
 </ServiceDefinition>
