@@ -147,6 +147,12 @@ get_mem_opts () {
     extmemopts=""
   fi
 
+  # REVET THE LINE 3 LINES BELOW!!!!!!!!!!!!!!!!!!!!
+  # always over-ride test
+  memopts=""
+  extmemopts=""
+  # REVET THE LINE 3 LINES ABOVE!!!!!!!!!!!!!!!!!!!!
+
   echo "${memopts} ${extmemopts}"
 }
 require_arg () {
