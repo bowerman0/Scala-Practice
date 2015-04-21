@@ -35,6 +35,10 @@ if [[ ! -n "$DEPLOYMENT_SOURCE" ]]; then
   DEPLOYMENT_SOURCE=$SCRIPT_DIR
 fi
 
+if [[ ! -n "$HOME" ]]; then
+  HOME=$DEPLOYMENT_SOURCE
+fi
+
 ACTIVATOR_CMD="$DEPLOYMENT_SOURCE/activator"
 
 if [[ ! -n "$NEXT_MANIFEST_PATH" ]]; then
